@@ -1,3 +1,5 @@
+![Build status](https://github.com/DryHop2/notely/actions/workflows/ci.yml/badge.svg)
+
 # learn-cicd-starter (Notely)
 
 This repo contains the starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).
