@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-var errMalformedAuthHeader = errors.New("malformed authorization header") // promote this to match by type
+var errMalformedAuthHeader = errors.New("malformed authorization header") 
 
 func TestGetAPIKey(t *testing.T) {
 	tests := map[string]struct {
