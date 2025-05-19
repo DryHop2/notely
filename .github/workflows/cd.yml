@@ -23,7 +23,11 @@ jobs:
 
       - name: Write GCP credentials to file
         run: |
-          echo ${{ secrets.GCP_CREDENTIALS }} > "${{ github.workspace }}/gcloud-key.json"
+          printf '%s' "${{ secrets.GCP_CREDENTIALS }}" > "${{ github.workspace }}/gcloud-key.json"
+
+      - name: Check JSON validity
+        run: |
+          cat "${{ github.workspace }}/gcloud-key.json" | jq .
 
       - name: Authenticate with gcloud
         run: |
