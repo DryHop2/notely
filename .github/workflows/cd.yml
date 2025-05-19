@@ -29,7 +29,6 @@ jobs:
 
       - name: Force service account activation
         run: |
-          echo "${{ secrets.GCP_CREDENTIALS }}" > $HOME/gcp-key.json
           gcloud auth activate-service-account cloud-run-deployer@notely-460310.iam.gserviceaccount.com --key-file=$HOME/gcp-key.json
           gcloud config set account cloud-run-deployer@notely-460310.iam.gserviceaccount.com
 
