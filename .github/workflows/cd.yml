@@ -26,6 +26,9 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
+      - name: Who am I?
+        run: gcloud auth list
+
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
