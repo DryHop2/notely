@@ -21,14 +21,14 @@ jobs:
       - name: Build the app
         run: scripts/buildprod.sh
 
+      - name: Force account change
+        run: gcloud config set account cloud-run-deployer@notely-460310.iam.gserviceaccount.com
+
       - name: Authenticate to Google Cloud
         id: auth
         uses: google-github-actions/auth@v2
         with:
           credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
-
-      - name: Force account change
-        run: gcloud config set account cloud-run-deployer@notely-460310.iam.gserviceaccount.com
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
