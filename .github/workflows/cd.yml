@@ -27,6 +27,9 @@ jobs:
         with:
           credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
 
+      - name: Force account change
+        run: gcloud config set account cloud-run-deployer@notely-460310.iam.gserviceaccount.com
+
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
