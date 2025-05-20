@@ -66,3 +66,6 @@ jobs:
           echo "Cloud Build failed. Falling back to local Docker build + push..."
           docker build -t us-central1-docker.pkg.dev/notely-460310/notely-ar-repo/notely:latest .
           docker push us-central1-docker.pkg.dev/notely-460310/notely-ar-repo/notely:latest
+
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image us-central1-docker.pkg.dev/notely-460310/notely-ar-repo/notely:latest --region us-central1 --allow-unauthenticated --project notely-460310 --max-instances=4
